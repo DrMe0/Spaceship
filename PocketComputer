@@ -1,73 +1,99 @@
---This is turtle 1.
---Program starts at on back of spaceship.
---rednet.open("right")
---Function for breaking stuff and placing things on the back
-local IFPLACEORNOT = "NO"
-local function PLACEANDBREAK()
-  turtle.dig()
-  if IFPLACEORNOT() == YES then
-    turtle.forward()
-    turtle.select(1)
-    turlte.place()
-    turtle.back()
+while true do
+local x
+local BlockNumber
+local input
+local input2 =1
+local input3 = 1
+local function Start()
+  term.clear()
+  print("Welcome to H.S.S Quantum. Input Y to initiate startup.")
+end
+local function block_number()
+  print("For how many blocks?")
+  Input()
+  if input == input then
+   input= BlockNumber
 end
 end
---turtle.inspect() replacement
-function turtle.inspect2()
-  local success, block = turtle.inspect2()
-  if block.name == nil then
-    return nil
+local function rednet()
+block_number()
+rednet.open()
+rednet.send(x)
+rednet.send (BlockNumber)
+end
+local function Start2()
+  print("Your possible commands are:")
+  print("1. spaceship.forward()")
+  print("2. spaceship.turnLeft()")
+  print("3 .spaceship.turnRight()")
+  print("4.spaceship.up()")
+  print("5. spaceship.down()")
+  print("6. spaceship.back()")
+  print("7. spaceship.ray()")
+  print("8. spaceship.end()")
+  end
+local function Input()
+input = nil
+  input = io.read()
+  end
+local function passcode()
+print("Enter your passcode")
+Input()
+  if input == "Moriarty" then
+   term.clear()
+     print("Access granted)")
+    input3 = 2
+    Start2()
   else
-    return block.name
-  end
-  end
---Moveforward and not wreck other turltes
-local function moveforward()
-  if turtle.inspect() == "minecraft:air" then
-    turtle.forward()
-  else
-    for Forloop1= 1, 100 do
-      turtle.detect()
-     end
-    moveforward()
-   end
-  end
-  --Distance to go forward when at back
-local MOVESIDE1DISTANCE = 1
---Direction to turn
-local function MOVESIDE()
-  turtle.left()
-  end
---Distance to move on side.  
-local MOVESIDE2DISTANCE = 10
---open redstone
-local function MessageTrigger()
-  local id,msg,dist=rednet.receive()  
+  term.clear()
+    print("Access denied")
+  os.sleep(10)
+    end
 end
---Other direction to turn
-local function MOVESIDE2()
-  if MOVESIDE() == turtle.left then
-    turtle.left()
-  else
-    turtle.right()
+while input2 == 1 do
+while input3 == 1 do
+Start()
+Input()
+if input == "Y" then
+  passcode()
+  input2 = 2
 end
-PLACEANDBREAK()
 end
-local function Moveforwardallonce()
-for Forloop2= 1, MOVESIDE1DISTANCE  do
-moveforward()
 end
-MOVESIDE()
-for Forloop3= 1, MOVESIDE2DISTANCE() do
-moveforward()
+while x ~= 8 do
+Input()
+if input == "spaceship.forward()" then
+x=1
+print("System running command spaceship.forward()")
+rednet()
+elseif input == "spaceship.turnLeft()" then
+x=2
+print("System running command spaceship.turnLeft()")
+rednet()
+elseif input == "spaceship.turnRight()" then
+x=3
+print("System running command spaceship.turnRight()")
+rednet()
+elseif input == "spaceship.up()" then
+x=4
+print("System running command spaceship.up")
+rednet()
+elseif input == "spaceship.down()" then
+x=5
+print("System running command spaceship.down")
+rednet()
+elseif input == "spaceship.back()" then
+x=6
+print("System running command spaceship.back()")
+rednet()
+elseif input == "spaceship.ray()" then
+x=7
+print("System running command spaceship.ray()")
+rednet()
+elseif input == "spaceship.end()" then
+x=8
+print("System turmenating, opening main hatch")
+os.sleep(3)
 end
-MOVESIDE2()
-for FORloop4= 1, MOVESIDE1DISTANCE() do
-moveforward()
 end
-MOVESIDE()
 end
---Running the program
---MessageTrigger()
---if messagme = 1 then
-Moveforwardallonce()
