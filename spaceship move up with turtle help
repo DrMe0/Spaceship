@@ -1,0 +1,61 @@
+--Slot 1 is Sticky Piston, Slot 2 is RedstoneBlock and Slot 3 is Cobblestone
+local how_many_times_does_this_thing_have_to_go_down = 1
+local Next = false
+local moveforward = 1
+function turtle.downF()
+Next = false
+while Next ~= false do
+  if turtle.detectDown()
+   turtle.digDown()
+   turtle.down()
+  else
+  turtle.select(3)
+  turtle.placeDown()
+  if turtle.detectDown() then
+  turtle.down()
+  else
+  end
+  end
+  end
+function turtle.forwardF()
+Next = false
+while Next ~= false do
+  if turtle.detect()
+   turtle.dig()
+   turtle.down()
+  else
+  turtle.select(3)
+  turtle.place()
+  if turtle.detect() then
+  turtle.forward()
+  else
+  end
+  end
+  end
+for Forloop1= 1, how_many_times_does_this_thing_have_to_go_down do
+  turtle.downF()
+end
+for Forloop2= 1, moveforward do
+  turtle.forwardF()
+end
+GO
+turtle.downF()
+turtle.downF()
+turtle.select(1)
+turtle.placeUp()
+turtle.downF()
+turtle.select(2)
+turtle.placeUp()
+turtle.digUp()
+turtle.select(1)
+turtle.up()
+turtle.digUp()
+turtle.up()
+turtle.turnLeft()
+turtle.turnLeft()
+for Forloop2= 1, moveforward do
+  turtle.forwardF()
+end
+for Forloop1= 1, how_many_times_does_this_thing_have_to_go_down do
+  turtle.up()
+end
