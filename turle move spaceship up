@@ -50,6 +50,7 @@ turtle.select(1)
 turtle.up()
 turtle.digUp()
 turtle.up()
+turtle.up()
 turtle.turnLeft()
 turtle.turnLeft()
 for Forloop2= 1, moveforward do
