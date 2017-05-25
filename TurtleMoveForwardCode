@@ -53,7 +53,7 @@ local function MOVESIDE2()
 end
 PLACEANDBREAK()
 end
-local function Moveforwardallonce()
+function Moveforwardallonce()
 for Forloop2= 1, MOVESIDE1DISTANCE  do
 moveforward()
 end
