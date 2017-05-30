@@ -10,7 +10,7 @@ function PLACEANDBREAK()
     turtle.select(1)
     turlte.place()
     turtle.back()
-  end
+end
 end
 --turtle.inspect() replacement
 function turtle.inspect2()
@@ -21,7 +21,7 @@ function turtle.inspect2()
     return block.name
   end
   end
---Moveforward and not wreck other turltes probably needs to be fixed
+--Moveforward and not wreck other turltes
 function moveforward()
   if turtle.inspect() == "minecraft:air" then
     turtle.forward()
@@ -35,37 +35,37 @@ function moveforward()
   --Distance to go forward when at back
 local MOVESIDE1DISTANCE = 1
 --Direction to turn
-function MOVESIDE()
+local function MOVESIDE()
   turtle.left()
   end
 --Distance to move on side.  
 local MOVESIDE2DISTANCE = 10
 --open redstone
-function MessageTrigger()
+local function MessageTrigger()
   local id,msg,dist=rednet.receive()  
 end
 --Other direction to turn
-function MOVESIDE2()
+local function MOVESIDE2()
   if MOVESIDE() == turtle.left then
     turtle.left()
   else
     turtle.right()
-  end
-  PLACEANDBREAK()
 end
-function Moveforwardallonce()
-  for Forloop2= 1, MOVESIDE1DISTANCE  do
-    moveforward()
-  end
-  MOVESIDE()
-  for Forloop3= 1, MOVESIDE2DISTANCE() do
-    moveforward()
-  end
-  MOVESIDE2()
-  for FORloop4= 1, MOVESIDE1DISTANCE() do
-    moveforward()
-  end
-  MOVESIDE()
+PLACEANDBREAK()
+end
+local function Moveforwardallonce()
+for Forloop2= 1, MOVESIDE1DISTANCE  do
+moveforward()
+end
+MOVESIDE()
+for Forloop3= 1, MOVESIDE2DISTANCE() do
+moveforward()
+end
+MOVESIDE2()
+for FORloop4= 1, MOVESIDE1DISTANCE() do
+moveforward()
+end
+MOVESIDE()
 end
 --Running the program
 --MessageTrigger()
