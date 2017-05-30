@@ -1,0 +1,13 @@
+while true do
+local V
+  rednet.open("left")
+ V= rednet.receive("AFelling")
+local ground = V.message
+print(message)
+local C = rednet.receive("ItsASmallWorldAfterAll")
+local CV =C.messgae
+    end
+--for ForLoopylilioopp = 1, V do
+--if C= "1" then
+--shell.run("SpaceshipForward)
+--if
