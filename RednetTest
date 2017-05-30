@@ -1,0 +1,4 @@
+while true do
+rednet.open("back")
+rednet.send(1,"Hello")
+end
